@@ -41,9 +41,13 @@ public class LimitedQueue<T> {
      */
     public void enQueue(T t) {
         try {
-            if (queue.size() < maxNumber){
-                queue.addLast(t);
-            }else {
+            if (queue.size() < maxNumber) {
+                if (!queue.contains(t)){
+                    queue.addLast(t);
+                }else {
+                    throw new QueueException("The queue contains the element.");
+                }
+            } else {
                 throw new QueueException("The size of the queue comes to it`s maximum.");
             }
         } catch (QueueException e) {
@@ -53,9 +57,9 @@ public class LimitedQueue<T> {
     }
 
     /**
-     * Get the first object of <code>LimitedQueue</code>.
+     * Get the first element of <code>LimitedQueue</code>.
      *
-     * @return the first object.
+     * @return the first element.
      */
     public T deQueue() {
         try {

@@ -60,4 +60,31 @@ public class UrlQueue {
     public static UrlQueue instance() {
         return instance;
     }
+
+    /**
+     * Add a url to the queue of unvisited urls.
+     *
+     * @param url element to be added to this queue
+     */
+    public void enQueue(String url){
+        unvisitedUrls.enQueue(url);
+    }
+
+    /**
+     * Get the first element of the queue of unvisited urls.
+     *
+     * @return the first element this queue
+     */
+    public String deQueue(){
+        return unvisitedUrls.deQueue();
+    }
+
+    /**
+     * Add the visited url to a set.
+     *
+     * @param url element to be added to this set
+     */
+    public void markVisited(String url){
+        visitedUrls.add(url);
+    }
 }
