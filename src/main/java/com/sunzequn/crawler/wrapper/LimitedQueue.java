@@ -35,9 +35,9 @@ public class LimitedQueue<T> {
     }
 
     /**
-     * Add an object to the tail of <code>LimitedQueue</code>.
+     * Add an element to the tail of <code>LimitedQueue</code>.
      *
-     * @param t The object which you want to add.
+     * @param t element to be added to this <code>LimitedQueue</code>
      */
     public void enQueue(T t) {
         try {
