@@ -53,4 +53,13 @@ public class LimitedSet<T> extends HashSet<T> {
             return false;
         }
     }
+
+    /**
+     * Get the size of <code>LimitedSet</code>
+     *
+     * @return the size
+     */
+    public int size(){
+        return this.size();
+    }
 }

@@ -9,6 +9,8 @@ import java.util.Set;
  * <p>
  * The wrapper class for the queue of urls,
  * which contains two parts: unvisited urls and visited urls.
+ * This class does not provide the access to specific implements of unvisited urls and visited urls.
+ * It`s should be taken as a independent data structure.
  */
 public class UrlQueue {
 
@@ -39,6 +41,7 @@ public class UrlQueue {
      * Default constructor for <code>UrlQueue</code> with variable initializations.
      */
     private UrlQueue() {
+
         String number;
         number = PropertiesUtil.getValue("maxVisitedUrlNumber");
         if (number != null){
@@ -66,7 +69,7 @@ public class UrlQueue {
      *
      * @param url element to be added to this queue
      */
-    public void enQueue(String url){
+    public void enUnvisitedUrlsQueue(String url){
         unvisitedUrls.enQueue(url);
     }
 
@@ -75,7 +78,7 @@ public class UrlQueue {
      *
      * @return the first element this queue
      */
-    public String deQueue(){
+    public String deUnvisitedUrlsQueue(){
         return unvisitedUrls.deQueue();
     }
 
@@ -86,5 +89,23 @@ public class UrlQueue {
      */
     public void markVisited(String url){
         visitedUrls.add(url);
+    }
+
+    /**
+     * Get the number of unvisited urls.
+     *
+     * @return the number of unvisited urls
+     */
+    public int unVisitedSize(){
+        return unvisitedUrls.size();
+    }
+
+    /**
+     * Get the number of visited urls.
+     *
+     * @return number of visited urls
+     */
+    public int visitedSize(){
+        return visitedUrls.size();
     }
 }

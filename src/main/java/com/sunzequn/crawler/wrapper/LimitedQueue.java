@@ -94,4 +94,12 @@ public class LimitedQueue<T> {
         return queue.contains(t);
     }
 
+    /**
+     * Get the size of <code>LimitedQueue</code>
+     * @return the size
+     */
+    public int size(){
+        return queue.size();
+    }
+
 }
