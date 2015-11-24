@@ -12,10 +12,13 @@ public class PullTextTest extends PullText {
     @Test
     public void test() {
 
-        String url = "http://sunzequn.com/";
-        System.out.println(this.pullFromUrl(url, 3000, HttpMethod.Get));
+//        String url = "http://sunzequn.com/";
+//        System.out.println(this.pullFromUrl(url, 3000, HttpMethod.Get));
+//
+//        String url1 = "http://sunzequn.com/";
+//        System.out.println(this.pullFromUrl(url1, 3000, HttpMethod.Post));
 
-        String url1 = "http://sunzequn.com/";
-        System.out.println(this.pullFromUrl(url1, 3000, HttpMethod.Post));
+        String url = "http://list.jd.com/list.html?cat=1713,3287,3797";
+        System.out.println(this.pullFromUrl(url, 5000, HttpMethod.Get));
     }
 }
