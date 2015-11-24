@@ -11,6 +11,7 @@ public class PullTextTest extends PullText {
 
     @Test
     public void test() {
+
         String url = "http://sunzequn.com/";
         System.out.println(this.pullFromUrl(url, 3000, HttpMethod.Get));
 
